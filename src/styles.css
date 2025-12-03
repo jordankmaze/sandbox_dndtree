@@ -1,0 +1,179 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+}
+
+.page {
+  flex: 1 1 auto;
+  padding: 0 20px;
+  margin: 20px;
+}
+
+.dropZone {
+  height: 20px;
+  transition: 200ms all;
+}
+
+.dropZone.active {
+  height: 25px;
+  transition: 100ms all;
+}
+
+/* Highlight entire column when it contains an active dropzone */
+.column:has(.dropZone.active)  {
+  border: 3px solid #2196F3 !important;
+  background-color: rgba(33, 150, 243, 0.1) !important;
+  border-radius: 8px;
+  transition: all 150ms ease;
+  transform: scale(1.02);
+}
+
+/* Specific styling for rows when columns are being moved */
+.row:has(.columns > .dropZone.active) {
+  border: 3px solid #2196F3 !important;
+  background-color: rgba(33, 150, 243, 0.1) !important;
+  border-radius: 8px;
+  transition: all 150ms ease;
+  transform: scale(1.01);
+}
+
+.component {
+  padding-left: 10px;
+}
+
+.column {
+  flex: 1 1 100%;
+}
+
+.column:empty {
+  background-color: rgba(0, 0, 255, 0.05);
+}
+
+.columnContainer {
+  display: flex;
+}
+
+.base {
+  padding-left: 1.5rem;
+  background-color: white;
+  cursor: move;
+}
+
+.row {
+  padding: 0;
+}
+
+.pageContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.addItemButton {
+  background: #696969;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: 'pointer';
+}
+
+.deleteItemButton {
+  background: #696969;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.editItemButton-confrim {
+  background: #696969;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.editItemButton-cancel {
+  background: #696969;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 6px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.collapseToggle {
+  font-weight: 900;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  font-size: 12px;
+  color: #666;
+  
+}
+
+.addRowContainer {
+  display: flex;
+  margin: 20px 20px 0 0;
+  justify-content: end;
+  align-items: center;
+  padding: 0 20px;
+  gap: 8px;
+}
+
+.editContent {
+  color: #666;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.hasChildren { 
+  font-size: 10px;
+  color: #999;
+  padding: 2px 4px;
+}
+
+.nodeContent {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  cursor: move;
+  gap: 4px;
+}
+
+.editInput {
+  padding: 2px 6px;
+  border: 2px solid;
+  border-radius: 3px;
+  min-width: 100px;
+}
+
+/* Placeholder styling for empty content */
+.editContent-placeholder {
+  color: #999;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.editContent-placeholder:hover {
+  color: #666;
+  opacity: 1;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+}
